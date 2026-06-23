@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap');
+
+:root {
+  /* Playful and vibrant color system */
+  --color-blue: #2A82E6;
+  --color-blue-dark: #1E5CA3;
+  --color-blue-light: #EBF4FF;
+  
+  --color-yellow: #FFC01E;
+  --color-yellow-dark: #D49806;
+  --color-yellow-light: #FFF9E6;
+  
+  --color-orange: #FF7034;
+  --color-orange-dark: #D84D12;
+  --color-orange-light: #FFEFE6;
+
+  --color-green: #25D366;
+  --color-green-dark: #128C7E;
+  --color-green-light: #E8F9EE;
+
+  --color-text-title: #1D2A44;
+  --color-text-body: #4A5568;
+  --color-bg-white: #FFFFFF;
+  --color-bg-cream: #FCFAF5;
+  --color-bg-gradient: linear-gradient(135deg, #EBF4FF 0%, #FFF9E6 50%, #FFEFE6 100%);
+  
+  /* Fonts */
+  --font-header: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Outfit', sans-serif;
+
+  /* Shadows & Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(42, 130, 230, 0.1), 0 10px 10px -5px rgba(42, 130, 230, 0.04);
+  --shadow-playful: 0 8px 0px var(--shadow-color, #E2E8F0);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-body);
+  background-color: var(--color-bg-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  color: var(--color-text-title);
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+button, .btn {
+  font-family: var(--font-header);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-bounce);
+}
+
+/* Grid & Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Playful utility classes */
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-blue {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+}
+
+.badge-yellow {
+  background-color: var(--color-yellow-light);
+  color: var(--color-yellow-dark);
+}
+
+.badge-orange {
+  background-color: var(--color-orange-light);
+  color: var(--color-orange);
+}
+
+/* Custom Playful Shadows */
+.playful-card {
+  background-color: var(--color-bg-white);
+  border: 3px solid var(--border-color, #1D2A44);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: 6px 6px 0px var(--shadow-color, #1D2A44);
+  transition: var(--transition-bounce);
+}
+
+.playful-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px var(--shadow-color, #1D2A44);
+}
+
+/* Animations */
+@keyframes pulse-soft {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(-1deg); }
+  75% { transform: translateY(3px) rotate(1deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+
+.wave-anim {
+  animation: wave 5s ease-in-out infinite;
+}
+
+.pulse-anim {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-orange);
+  color: white;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  border: 3px solid var(--color-text-title);
+  box-shadow: 4px 4px 0px var(--color-text-title);
+}
+
+.btn-primary:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--color-text-title);
+  background-color: #ff8552;
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--color-text-title);
+}
+
+.btn-secondary {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue-dark);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  border: 3px solid var(--color-blue-dark);
+  box-shadow: 4px 4px 0px var(--color-blue-dark);
+}
+
+.btn-secondary:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--color-blue-dark);
+  background-color: #dbeaff;
+}
+
+.btn-secondary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--color-blue-dark);
+}
+
+.btn-whatsapp {
+  background-color: var(--color-green);
+  color: white;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  border: 3px solid var(--color-text-title);
+  box-shadow: 4px 4px 0px var(--color-text-title);
+}
+
+.btn-whatsapp:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--color-text-title);
+  background-color: #2ee073;
+}
+
+.btn-whatsapp:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--color-text-title);
+}
