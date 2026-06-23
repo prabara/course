@@ -11,7 +11,7 @@
   let formData = $state({ name: '', phone: '', grade: '1', message: '' });
 
   // WhatsApp configuration
-  const whatsappNumber = '6281234567890'; // Replace with real number if needed
+  const whatsappNumber = '62811599591'; // Replace with real number if needed
   const getWhatsAppLink = (text: string) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
   // Dynamic testimonial carousel interval
