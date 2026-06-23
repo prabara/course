@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "tes2",
+	"name": "course",
 	"compatibility_date": "2026-06-23",
 	"compatibility_flags": [
 		"nodejs_als"
